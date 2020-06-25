@@ -1,0 +1,2 @@
+class InvalidCdRom < ArgumentError
+end
