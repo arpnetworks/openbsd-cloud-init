@@ -1,0 +1,15 @@
+version: 1
+config:
+  - type: physical
+    name: eth0
+    mac_address: "52:54:00:1e:a6:7b"
+    subnets:
+      - type: static
+        address: 10.0.0.2
+        netmask: 255.255.255.0
+        gateway: 10.0.0.1
+        dns_nameservers:
+          - 8.8.8.8
+          - 1.1.1.1
+          - 2607:f2f8:0:101::a
+          - 2607:f2f8:0:101::b

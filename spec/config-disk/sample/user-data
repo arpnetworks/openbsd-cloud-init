@@ -1,0 +1,44 @@
+#cloud-config
+cloud_name: arpnetworks
+fqdn: foo.cust.arpnetworks.com
+
+# Resize partition / filesystem(s)
+resize_rootfs: true
+growpart:
+  mode: auto
+  devices: ['/']
+
+# Enable TRIM / discard
+mount_default_fields: [none, none, "auto", "defaults,nobootwait,discard", "0", "2"]
+
+ssh_pwauth: true
+
+# Users
+users:
+  - name: foo
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    passwd: $6$56509f3a110843ac$iiAHE10YHOalUdoyXit0q3OsOIjM0hgR74HZzXJO0ZnoCRKtZX/GQ.FBSigyhicaZ6AZXystNKqVdA.biWikm.
+    lock_passwd: false
+    groups: sudo
+    ssh_authorized_keys:
+
+    - ssh-rsa AAAA... foo@localhost
+  - name: bar
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    passwd: $6$56509f3a110843ac$iiAHE10YHOalUdoyXit0q3OsOIjM0hgR74HZzXJO0ZnoCRKtZX/GQ.FBSigyhicaZ6AZXystNKqVdA.biWikm.
+    lock_passwd: false
+    groups: sudo
+    ssh_authorized_keys:
+
+    - ssh-rsa AAAA... bar@localhost
+    - ssh-dsa AAAA... bar@localhost
+
+phone_home:
+  url: https://localhost:3000/api/v1/internal/virtual_machines/phone_home/$INSTANCE_ID
+  post:
+    - pub_key_dsa
+    - pub_key_rsa
+    - pub_key_ecdsa
+    - pub_key_ed25519
+  tries: 15
+

@@ -1,0 +1,5 @@
+cloud_name: arpnetworks
+instance-id: a1a1bc00-98e0-0138-a173-52541cfc82a1
+local_hostname: autoprov-test.cust.arpnetworks.com
+dsmode: local
+
