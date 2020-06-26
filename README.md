@@ -31,7 +31,7 @@ Status](https://travis-ci.org/arpnetworks/openbsd-cloud-init.svg?branch=master)]
 
 ~~Despite [cloud-init](https://github.com/canonical/cloud-init) claiming
 that OpenBSD is supported, I've never seen a version of cloud-init for
-[OpenBSD](http://www.openbsd.org) no matter where I looked.
+[OpenBSD](http://www.openbsd.org) no matter where I looked.~~
 
 ~~There is an independent, and also minimal, one [by
 exoscale](https://github.com/exoscale/openbsd-cloud-init), but that's
