@@ -1,0 +1,2 @@
+class InvalidUserData < ArgumentError
+end
