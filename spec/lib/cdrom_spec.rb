@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/../../lib/cdrom'
-require File.dirname(__FILE__) + '/../../exceptions/invalid_cdrom'
+require File.dirname(__FILE__) + '/../../lib/exceptions/invalid_cdrom'
 
 RSpec.describe CdRom do
   def do_initialize
